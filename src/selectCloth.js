@@ -8,8 +8,6 @@ const selectCloth = async () => {
     const [page, browser] = await openBrowser(clothUrl)
 }
 
-
-
 export const autoSelectCloth = async (page) => {
     
     //顏色
@@ -26,6 +24,6 @@ export const autoSelectCloth = async (page) => {
     //立即購買按鈕，等待browser loading ...
     //await page.click('.btn-buy-now')
 
-    await Promise.all([page.click('.btn-buy-now'), page.waitForNavigation({waitUntil:'networkidle2'})])
+    //await Promise.all([page.click('.btn-buy-now'), page.waitForNavigation({waitUntil:'networkidle2'})])
 
 }
