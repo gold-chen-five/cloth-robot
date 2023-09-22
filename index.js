@@ -4,8 +4,10 @@ import { autoSelectCloth } from './src/selectCloth.js';
 
 const cartUrl = 'https://www.shop.outdoorman.co/cart'
 const checkoutUrl = 'https://www.shop.outdoorman.co/checkout'
-const clothUrl = 'https://www.shop.outdoorman.co/products/good-on-gost701'
+//const clothUrl = 'https://www.shop.outdoorman.co/products/good-on-gost701'
+//const clothUrl = 'https://www.shop.outdoorman.co/products/good-on-gost2203'
 //const clothUrl = 'https://www.shop.outdoorman.co/products/goopimade-fd-g4'
+const clothUrl = 'https://www.shop.outdoorman.co/products/melsign-mspoon-'
 
 const checkOut = async (page) => {
   await page.goto(checkoutUrl)
@@ -27,10 +29,10 @@ const submitBtn = async (page) => {
 const main = async () => {
   const [page, browser] = await openBrowser(clothUrl)
   await autoSelectCloth(page)
-  await paymentSelect(page)
+  //await paymentSelect(page)
   await checkOut(page)
   await ageInput(page)
-  await submitBtn(page)
+  //await submitBtn(page)
 }
 
 main()
