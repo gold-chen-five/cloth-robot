@@ -12,7 +12,7 @@ const num = 1  //數量
 
 const openBrowser = async() => {
   // 開啟網頁
-  const browser = await puppeteer.launch({headless: false})
+  const browser = await puppeteer.launch({userDataDir: './tmp/myChromeSession',headless: false})
   const page = await browser.newPage()
   await page.goto(clothUrl)
 
@@ -26,7 +26,7 @@ const signinPage = async (page) => {
   await page.type('#field-1', `${email}`)
   await page.type('#field-2', `${password}`)
   //await page.click('.chakra-button')
-  await Promise.all([page.click('.chakra-button'), page.waitForNavigation({waitUntil:'networkidle2'})])
+  //await Promise.all([page.click('.chakra-button'), page.waitForNavigation({waitUntil:'networkidle2'})])
 }
 
 const getCookie = async (page) => {
